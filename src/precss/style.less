@@ -1,0 +1,433 @@
+@import "fonts.less";
+@import "smartgrid.less";
+
+.reset();
+
+body {
+	font-family: "HelveticaNeueCyr-Roman", sans-serif;
+	font-size: 16px;
+}
+
+.section-title {
+	text-align: center;
+	color: #171717;
+	font-size: 35px;
+	font-weight: 500;
+}
+
+.container {
+	.wrapper();
+}
+
+.button, #form-submit {
+	display: inline-block;
+	text-decoration: none;
+	box-shadow: 0 2px 20px 1px rgba(0, 0, 0, 0.18);
+	border-radius: 36px;
+	padding: 25px 35px;
+	background-color: #90ee90;
+	color: #ffffff;
+	font-size: 22px;
+	font-family: 'HelveticaNeueCyr-Medium';
+	transition: all 0.5s ease;
+	&:hover {
+		background-color: darken(#90ee90, 10%);
+	}
+}
+
+.logo {
+	display: flex;
+	align-items: center;
+	cursor: pointer;
+
+	&__image {
+		margin-right: 15px;
+	}
+
+	&__text {
+		color: #90ee90;
+		letter-spacing: 0.2em;
+		font-family: 'HelveticaNeueCyr-LightItalic';
+		font-size: 33px;
+	}
+
+	span {
+		display: block;
+		color: #717172;
+		font-size: 16px;
+		font-weight: 300;
+		line-height: 36px;
+		letter-spacing: 0.12em;
+	}
+}
+
+.header {
+	padding-top: 21px;
+	padding-bottom: 35px;
+	&-wrap {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		.lg(justify-content, center)
+	}
+	.logo {
+		.lg(margin-bottom, 20px);
+	}
+	&-navigation {
+		margin-bottom: 45px;
+		.md(margin-bottom, 0px);
+		ul {
+			display: flex;
+			flex-wrap: wrap;
+			li {
+				margin: 0 20px;
+				.md(margin-bottom, 20px);
+				a {
+					color: #000000;
+					font-size: 18px;
+					text-decoration: none;
+					transition: all 0.5s ease;
+					&:hover, &:active {
+						color: #00bbb6;
+						text-decoration: underline;
+					}
+				}
+			}
+		}
+	}
+	&-info {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		.xs(justify-content, center);
+		align-items: center;
+		.header-tel {
+			.xs(margin-bottom, 10px);
+			padding-left: 31px;
+			background: url(../img/whatsapp-icon.png) no-repeat 0 center;
+			span {
+				font-size: 22px;
+				font-family: 'HelveticaNeueCyr-Medium';
+			}
+			a {
+				color: #000000;
+				text-decoration: none;
+			}
+		}
+		.button {
+			.xs(margin-bottom, 10px);
+			padding: 10px 0;
+			padding-left: 52px;
+			padding-right: 22px;
+			color: #00bbb6;
+			border: 1px solid #00bbb6;
+			background: url(../img/phone-icon.png) no-repeat 20px center;
+			background-color: transparent;
+			box-shadow: none;
+			font-size: 16px;
+			transition: all 0.5s ease;
+			&:hover {
+				color: #ffffff;
+				background-color: #00bbb6;
+			}
+		}
+		.header-socials a{
+			margin-left: 16px;
+			& img:hover {
+				transform: scale(1.1);
+			}
+		}
+	}
+}
+
+.hero {
+	color: #ffffff;
+	padding-top: 60px;
+	padding-bottom: 53px;
+	background: #87d5fb url(../img/hero-bg.jpg) no-repeat center top / cover;
+	.slide {
+		padding: 63px 38px;
+		background-color: rgba(0, 0, 0, 0.5);
+		border-radius: 10px;
+		&__title {
+			font-size: 53px;
+			.sm(font-size, 37px);
+			line-height: 65px;
+			.sm(line-height, 40px);
+			margin-bottom: 23px;
+			font-family: 'HelveticaNeueCyr-Light';
+			b {
+				font-family: 'HelveticaNeueCyr-Medium';
+			}
+			
+		}
+		&__text {
+			font-size: 17px;
+			line-height: 21px;
+			margin-bottom: 58px;
+		}
+		.button{
+			text-align: center;
+		}
+	}
+
+	
+}
+
+.price {
+	padding-top: 95px;
+	padding-bottom: 100px;
+
+	.section-title {
+		margin-bottom: 35px;
+	}
+	.items {
+		.row-flex();
+		justify-content: center;
+		text-align: center;
+		.item {
+			.col();
+			.size(4);
+			.size-md(6);
+			.size-sm(8);
+			margin-bottom: 9px;
+			border-radius: 10px;
+			.img {
+				position: relative;
+				img {
+					width: 100%;
+					height: auto;
+				}
+			}
+			.text {
+				border-radius: 10px;
+				transition: all 0.5s ease;
+				opacity: 0;
+				box-sizing: border-box;
+				color: #ffffff;
+				position: absolute;
+				width: 100%;
+				padding: 18px 9px;
+				bottom: 1px;
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: space-between;
+				align-items: center;
+				background-color: rgba(0,0,0,0.7);
+				span {
+					font-size: 24px;
+					font-family: 'HelveticaNeueCyr-Medium';
+					color: #90ee90;
+				}
+			}
+			&:hover .text {opacity: 1;}
+		}
+	}
+}
+
+.feedback {
+	padding-top: 55px;
+	padding-bottom: 44px;
+	color: #ffffff;
+	background: #00bbb6 url(../img/feedback-background.png) no-repeat center top / cover;
+	&-wrap {
+		.row-flex();
+	}
+	&-content {
+		.col();
+		.size(7);
+		.size-md(9);
+		.size-sm(12);
+	}
+	&-promo {
+		margin-bottom: 52px;
+		font-size: 36px;
+		font-family: 'HelveticaNeueCyr-Light';
+		line-height: 52px;
+		b {
+			font-size: 38px;
+			font-family: 'HelveticaNeueCyr-Roman';
+		}
+		span {
+			font-size: 40px;
+			font-family: 'HelveticaNeueCyr-Roman';
+		}
+	}
+	&-form {
+		input {
+			box-sizing: border-box;
+			border: none;
+			width: 100%;
+			margin-bottom: 13px;
+			padding: 25px 37px;
+			border-radius: 33px;
+			background-color: #ffffff;
+			color: #dcdbdb;
+			font-weight: 300;
+		}
+		.button {
+			width: 100%;
+			margin-top: 30px;
+		}
+	}
+}
+
+.advantages {
+	padding-top: 95px;
+	padding-bottom: 6px;
+	.section-title {
+		margin-bottom: 61px;
+	}
+	.items {
+		.row-flex();
+		justify-content: center;
+		.item {
+			.col();
+			.size(4);
+			.size-md(5);
+			.size-sm(7);
+			.size-xs(12);
+			box-shadow: 0 2px 8px 1px rgba(0, 0, 0, 0.18);
+			border-radius: 10px;
+			margin-bottom: 22px;
+			padding-top: 23px;
+			padding-left: 17px;
+			padding-bottom: 27px;
+			padding-right: 16px;
+			&__title {
+				background-image: url(../img/advantages-icon.png);
+				background-repeat: no-repeat;
+				background-position: top right;
+				font-size: 24px;
+				color: #90ee90;
+				font-weight: 500;
+				padding-right: 150px;
+				margin-bottom: 25px;
+			}
+			&__text {
+				color: #9f9e9e;
+				font-size: 14px;
+				font-weight: 300;
+				line-height: 14px;
+			}
+		}
+	}
+}
+
+.about {
+	padding-top: 95px;
+	padding-bottom: 94px;
+	.section-title {
+		margin-bottom: 31px;
+	}
+	&-text {
+		color: #4f4f4f;
+		line-height: 22px;
+	}
+}
+
+.footer {
+	padding-top: 43px;
+	padding-bottom: 54px;
+	background-color: #2d2d2d;
+	&-wrap {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		.sm(justify-content, center);
+		align-items: center;
+	}
+	.logo span{
+		color: #ffffff;
+	}
+	&-menu {
+		.sm(display, none);
+		ul {
+			max-height: 120px;
+			.lg(max-height, unset);
+			display: flex;
+			flex-wrap: wrap;
+			flex-direction: column;
+				li {
+					margin-bottom: 20px;
+
+					a {
+						color: #ffffff;
+						text-decoration: none;
+						transition: all 0.5s ease;
+						&:hover,
+						&:active {
+							color: #00bbb6;
+							text-decoration: underline;
+						}
+					}
+				}
+		}
+	}
+	
+	&-info {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-end;
+		// flex-wrap: wrap;
+		// justify-content: space-between;
+		// .xs(justify-content, center);
+		// align-items: center;
+
+		.footer-tel {
+			// .xs(margin-bottom, 10px);
+			margin-bottom: 17px;
+			padding-left: 31px;
+			background: url(../img/whatsapp-icon.png) no-repeat 0 center;
+
+			span {
+				font-size: 22px;
+				font-family: 'HelveticaNeueCyr-Medium';
+			}
+
+			a {
+				color: #fff;
+				text-decoration: none;
+			}
+		}
+
+		.button {
+			// .xs(margin-bottom, 10px);
+			padding: 10px 32px;
+			color: #00bbb6;
+			border: 1px solid #00bbb6;
+			background-color: transparent;
+			box-shadow: none;
+			margin-bottom: 17px;
+			font-size: 16px;
+			transition: all 0.5s ease;
+			&:hover {
+				color: #ffffff;
+				background-color: #00bbb6;
+			}
+		}
+
+		.footer-socials a{
+			margin-left: 13px;
+			.sm(margin-left, 0);
+			& img:hover {
+				transform: scale(1.1);
+			}
+		}
+	}
+}
+.slick-dots {
+	bottom: 20px;
+}
+
+.slick-dots li button::before {
+	font-size: 15px;
+	color: #fff;
+	opacity: 1;
+}
+
+.slick-dots li.slick-active button:before {
+	// border: 1px solid #90ee90;
+	color: #90ee90;
+	opacity: 1;
+}
